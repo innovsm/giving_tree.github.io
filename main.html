@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Giving Tree - Donate Clothes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      /* Styles for the entire page */
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('donation_wallpaper.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      /* Header styles */
+      header {
+        background-color: #008080;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .contact {
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+      }
+
+      .contact a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 20px;
+      }
+
+      /* Main content styles */
+      main {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 10px;
+      }
+
+      h1 {
+        color: #008080;
+        text-transform: uppercase;
+        font-size: 48px;
+        text-align: center;
+        margin-top: 0;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        color: #008080;
+        font-size: 36px;
+        text-transform: uppercase;
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+
+      li:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .event-date {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .event-details {
+        font-size: 18px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+      }
+
+      .cta {
+        display: block;
+        background-color: #008080;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 20px 0;
+        text-decoration: none;
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .slideshow {
+  max-width: 800px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+  max-height: 400px;
+}
+
+
+      .cta:hover {
+        background-color: #006666;
+      }
+
+      .announcement {
+        background-color: #f5f5f5;
+        border-radius: 10;
+      }
+    
+      </style>
+  </head>
+  <body>
+    <h1>The Giving Tree</h1>
+    <p>We are a university-based organization that collects used clothes for donation. Our mission is to help those in need and promote sustainability through the reuse of clothing.</p>
+    <h2>Donate Clothes</h2>
+    <p>If you would like to donate clothes, please contact us at donate@givingtree.org. We accept gently used clothing items and accessories such as shoes, hats, and purses. We appreciate your support!</p>
+    <h2>Upcoming Events</h2>
+    <ul>
+      <li>Spring Clothing Drive - April 15-30, 2023</li>
+      <li>Charity Run/Walk - May 20, 2023</li>
+    </ul>
+    <div class="slideshow">
+      <div class="mySlides fade">
+        <img src="donation1.jpg" style="width:100%">
+        <div class="text">Donation 1</div>
+      </div>
+    
+      <div class="mySlides fade">
+        <img src="donation2.jpg" style="width:100%">
+        <div class="text">Donation 2</div>
+      </div>
+    
+      <div class="mySlides fade">
+        <img src="donation3.jpg" style="width:100%">
+        <div class="text">Donation 3</div>
+      </div>
+    
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+    <script>
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  setTimeout(showSlides, 2000); // Change image every 5 seconds
+}
+
+      </script>
+  </body>
+</html>
