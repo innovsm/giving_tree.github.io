@@ -1,216 +1,287 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>The Giving Tree - Donate Clothes</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Giving Tree - Clothing Donation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-      /* Styles for the entire page */
-      body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-image: url('donation_wallpaper.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f4f6f7;
+            --text-color: #333;
+        }
 
-      /* Header styles */
-      header {
-        background-color: #008080;
-        color: #fff;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      .logo {
-        font-size: 24px;
-        font-weight: bold;
-        text-transform: uppercase;
-      }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
 
-      .contact {
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-      }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-      .contact a {
-        color: #fff;
-        text-decoration: none;
-        margin-left: 20px;
-      }
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-      /* Main content styles */
-      main {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: rgba(255, 255, 255, 0.7);
-        border-radius: 10px;
-      }
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-      h1 {
-        color: #008080;
-        text-transform: uppercase;
-        font-size: 48px;
-        text-align: center;
-        margin-top: 0;
-      }
+        .mission {
+            background-color: white;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
 
-      p {
-        font-size: 18px;
-        line-height: 1.5;
-        margin-bottom: 20px;
-      }
+        .mission p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
 
-      h2 {
-        color: #008080;
-        font-size: 36px;
-        text-transform: uppercase;
-        margin-top: 30px;
-        margin-bottom: 10px;
-      }
+        .donate-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 0;
+            background-color: white;
+        }
 
-      ul {
-        list-style: none;
-        padding-left: 0;
-        margin-top: 0;
-      }
+        .donate-info {
+            flex: 1;
+            padding-right: 30px;
+            min-width: 300px;
+        }
 
-      li {
-        margin-bottom: 10px;
-        display: flex;
-        flex-direction: column;
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-      }
+        .donate-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
 
-      li:hover {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      }
+        .donate-cta {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
 
-      .event-date {
-        font-size: 24px;
-        font-weight: bold;
-        text-align: center;
-      }
+        .donate-cta:hover {
+            background-color: #2980b9;
+        }
 
-      .event-details {
-        font-size: 18px;
-        margin-left: 20px;
-        margin-bottom: 20px;
-      }
+        .events {
+            background-color: var(--background-color);
+            padding: 50px 0;
+        }
 
-      .cta {
-        display: block;
-        background-color: #008080;
-        color: #fff;
-        font-size: 18px;
-        text-transform: uppercase;
-        text-align: center;
-        padding: 10px;
-        border-radius: 5px;
-        margin: 20px 0;
-        text-decoration: none;
-        width: 200px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .slideshow {
-  max-width: 800px;
-  position: relative;
-  margin: auto;
-}
+        .events h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
 
-.mySlides {
-  display: none;
-  max-height: 400px;
-}
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
+        .event-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
 
-      .cta:hover {
-        background-color: #006666;
-      }
+        .event-card:hover {
+            transform: scale(1.05);
+        }
 
-      .announcement {
-        background-color: #f5f5f5;
-        border-radius: 10;
-      }
-    
-      </style>
-  </head>
-  <body>
-    <h1>The Giving Tree</h1>
-    <p>We are a university-based organization that collects used clothes for donation. Our mission is to help those in need and promote sustainability through the reuse of clothing.</p>
-    <h2>Donate Clothes</h2>
-    <p>If you would like to donate clothes, please contact us at donate@givingtree.org. We accept gently used clothing items and accessories such as shoes, hats, and purses. We appreciate your support!</p>
-    <h2>Upcoming Events</h2>
-    <ul>
-      <li>Spring Clothing Drive - April 15-30, 2023</li>
-      <li>Charity Run/Walk - May 20, 2023</li>
-    </ul>
-    <div class="slideshow">
-      <div class="mySlides fade">
-        <img src="donation1.jpg" style="width:100%">
-        <div class="text">Donation 1</div>
-      </div>
-    
-      <div class="mySlides fade">
-        <img src="donation2.jpg" style="width:100%">
-        <div class="text">Donation 2</div>
-      </div>
-    
-      <div class="mySlides fade">
-        <img src="donation3.jpg" style="width:100%">
-        <div class="text">Donation 3</div>
-      </div>
-    
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    
-    <br>
-    
-    <div style="text-align:center">
-      <span class="dot" onclick="currentSlide(1)"></span> 
-      <span class="dot" onclick="currentSlide(2)"></span> 
-      <span class="dot" onclick="currentSlide(3)"></span> 
-    </div>
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .donate-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .donate-info {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>The Giving Tree</h1>
+        </div>
+    </header>
+
+    <section class="mission container">
+        <p>We are a community-driven organization dedicated to collecting and redistributing gently used clothing. Our mission is to support those in need while promoting sustainability through clothing reuse.</p>
+    </section>
+
+    <section class="donate-section container">
+        <div class="donate-info">
+            <h2>Donate Your Clothes</h2>
+            <p>Your donations can make a significant difference in someone's life. We accept clean, gently used clothing, shoes, and accessories.</p>
+            <a href="mailto:donate@givingtree.org" class="donate-cta">Donate Now</a>
+        </div>
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="donation1.jpg" alt="Clothing Donation">
+            </div>
+            <div class="slide fade">
+                <img src="donation2.jpg" alt="Community Support">
+            </div>
+            <div class="slide fade">
+                <img src="donation3.jpg" alt="Clothing Drive">
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+    </section>
+
+    <section class="events container">
+        <h2>Upcoming Events</h2>
+        <div class="event-grid">
+            <div class="event-card">
+                <h3>Spring Clothing Drive</h3>
+                <p>April 15-30, 2024</p>
+                <p>Donate your winter and spring clothing items.</p>
+            </div>
+            <div class="event-card">
+                <h3>Charity Run/Walk</h3>
+                <p>May 20, 2024</p>
+                <p>Join us to support our clothing donation mission.</p>
+            </div>
+            <div class="event-card">
+                <h3>Summer Donation Workshop</h3>
+                <p>June 15, 2024</p>
+                <p>Learn about clothing donation and sustainability.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 The Giving Tree. All Rights Reserved.</p>
+        <p>Contact: donate@givingtree.org</p>
+    </footer>
+
     <script>
-    var slideIndex = 1;
-showSlides(slideIndex);
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName('slide');
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = 'block';
+            setTimeout(showSlides, 5000);
+        }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+        function changeSlide(n) {
+            slideIndex += n;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            if (slideIndex < 1) {
+                slideIndex = slides.length;
+            }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slides[slideIndex - 1].style.display = 'block';
+        }
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  setTimeout(showSlides, 2000); // Change image every 5 seconds
-}
-
-      </script>
-  </body>
+        showSlides();
+    </script>
+</body>
 </html>
